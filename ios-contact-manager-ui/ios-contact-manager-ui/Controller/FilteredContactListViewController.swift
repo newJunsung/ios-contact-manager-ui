@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FilteredContactListViewController: UITableViewController {
+class FilteredContactListViewController: UITableViewController, ReuseIdentiFiable {
     private(set) var filteredContacts = [Contact]()
     private weak var contactManager: ContactManager?
     private weak var presenter: CellPresenter?

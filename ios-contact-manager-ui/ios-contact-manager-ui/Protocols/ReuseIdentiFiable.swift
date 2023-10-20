@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol ReuseIdentyFiable {
+protocol ReuseIdentiFiable {
     static var reuseID: String { get }
 }
 
-extension ReuseIdentyFiable {
+extension ReuseIdentiFiable {
     static var reuseID: String {
         String(describing: self)
     }

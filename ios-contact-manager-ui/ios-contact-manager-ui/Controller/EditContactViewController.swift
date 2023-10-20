@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class EditContactViewController: UIViewController {
+final class EditContactViewController: UIViewController, ReuseIdentiFiable {
     @IBOutlet private weak var nameTextField: UITextField!
     @IBOutlet private weak var ageTextField: UITextField!
     @IBOutlet private weak var phoneNumberTextField: UITextField!

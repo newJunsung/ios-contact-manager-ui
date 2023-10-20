@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ContactCell: UITableViewCell, ReuseIdentyFiable {
+class ContactCell: UITableViewCell, ReuseIdentiFiable {
 
     @IBOutlet weak var thumbnailImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!

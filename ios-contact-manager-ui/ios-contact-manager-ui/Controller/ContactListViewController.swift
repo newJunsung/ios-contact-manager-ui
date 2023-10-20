@@ -44,7 +44,7 @@ final class ContactListViewController: UIViewController {
     }
     
     @objc private func tapAddButton(_ sender: UIButton) {
-        if let viewController = storyboard?.instantiateViewController(identifier: "EditContactViewController", creator: { coder in
+        if let viewController = storyboard?.instantiateViewController(identifier: EditContactViewController.reuseID, creator: { coder in
             return EditContactViewController(coder: coder, contactValidityChecker: ContactValidityChecker(), contactManager: self.contactManager)
         }) {
             present(UINavigationController(rootViewController: viewController), animated: true)
@@ -61,7 +61,7 @@ final class ContactListViewController: UIViewController {
     }
     
     private func configureSearchBar() {
-        guard let filteredViewController = storyboard?.instantiateViewController(identifier: "FilteredContactListViewController",creator: { coder in
+        guard let filteredViewController = storyboard?.instantiateViewController(identifier: FilteredContactListViewController.reuseID, creator: { coder in
             return FilteredContactListViewController(coder: coder, contactManager: self.contactManager, presenter: self.presenter)
         }) else {
             return
