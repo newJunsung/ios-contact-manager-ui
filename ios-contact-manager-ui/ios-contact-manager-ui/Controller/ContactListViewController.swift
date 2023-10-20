@@ -8,15 +8,21 @@
 import UIKit
 
 final class ContactListViewController: UIViewController {
-    private let contactManager = ContactManager()
+    private let contactManager = ContactManager(contactRepository: ContactRepository())
     private let presenter: CellPresenter = ContactCellPresenter()
-    
+    private var contacts: [Contact]!
     private var searchController: UISearchController!
     
     @IBOutlet private weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for i in 5...20 {
+                    try! contactManager.create(Contact(name: "1\(i)", age: i, phoneNumber: "111-23123-23123"))
+                }
+        
+        contacts = contactManager.readContactsByName()
         
         configureNavigationBar()
         configureTableView()
@@ -52,6 +58,7 @@ final class ContactListViewController: UIViewController {
     }
     
     @objc private func reloadContacts(_ notification: Notification) {
+        contacts = self.contactManager.readContactsByName()
         self.tableView.reloadData()
     }
     
@@ -76,11 +83,11 @@ final class ContactListViewController: UIViewController {
 
 extension ContactListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return  contactManager.contacts.count
+        return  contacts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let contact = contactManager.contacts[indexPath.row]
+        let contact = contacts[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: ContactCell.reuseID, for: indexPath)
         
@@ -92,7 +99,8 @@ extension ContactListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             do {
-                try contactManager.delete(contactManager.contacts[indexPath.row])
+                try contactManager.delete(contacts[indexPath.row])
+                contacts.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
             } catch {
                 return
@@ -108,9 +116,9 @@ extension ContactListViewController: UISearchResultsUpdating {
                 return
             }
             
-            viewController.setFilteredContacts(contactManager.contacts.filter {
+            viewController.setFilteredContacts(contactManager.readFilteredContact(by: {
                 $0.name.localizedCaseInsensitiveContains(text)
-            })
+            }))
             viewController.tableView.reloadData()
         }
     }

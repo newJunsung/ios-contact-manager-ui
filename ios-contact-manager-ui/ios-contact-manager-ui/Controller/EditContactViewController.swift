@@ -92,7 +92,7 @@ final class EditContactViewController: UIViewController, ReuseIdentiFiable {
     
     
     private func add(_ contact: Contact)throws {
-        try contactManager.add(contact)
+        try contactManager.create(contact)
         NotificationCenter.default.post(name: Notification.didUpdateContact, object: nil)
     }
 }
