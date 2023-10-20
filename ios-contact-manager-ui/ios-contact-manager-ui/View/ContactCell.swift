@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ContactCell: UITableViewCell {
+class ContactCell: UITableViewCell, ReuseIdentyFiable {
 
     @IBOutlet weak var thumbnailImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -28,3 +28,5 @@ class ContactCell: UITableViewCell {
     }
     
 }
+
+

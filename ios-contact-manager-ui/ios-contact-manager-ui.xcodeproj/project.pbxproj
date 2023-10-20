@@ -27,10 +27,10 @@
 		0DE003E72ADF71B8000D2BDD /* ContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DE003E52ADF71B8000D2BDD /* ContactCell.xib */; };
 		0DE003E92ADF7875000D2BDD /* FilteredContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE003E82ADF7875000D2BDD /* FilteredContactListViewController.swift */; };
 		7F1336192AD92044004D0DFD /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1336182AD92044004D0DFD /* Notification+Extension.swift */; };
-		7F8E1E202ADFE51700DEABF2 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8E1E1F2ADFE51700DEABF2 /* UITableViewCell+Extension.swift */; };
 		7F8E1E222AE0BDD000DEABF2 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8E1E212AE0BDD000DEABF2 /* String+Extension.swift */; };
 		7F8E1E252AE0E75300DEABF2 /* CellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8E1E242AE0E75300DEABF2 /* CellPresenter.swift */; };
 		7F8E1E282AE0E79B00DEABF2 /* ContactCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8E1E272AE0E79B00DEABF2 /* ContactCellPresenter.swift */; };
+		7F8E1E2A2AE20B3E00DEABF2 /* ReuseIdentyFiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8E1E292AE20B3E00DEABF2 /* ReuseIdentyFiable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,10 +73,10 @@
 		0DE003E52ADF71B8000D2BDD /* ContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCell.xib; sourceTree = "<group>"; };
 		0DE003E82ADF7875000D2BDD /* FilteredContactListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredContactListViewController.swift; sourceTree = "<group>"; };
 		7F1336182AD92044004D0DFD /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
-		7F8E1E1F2ADFE51700DEABF2 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		7F8E1E212AE0BDD000DEABF2 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		7F8E1E242AE0E75300DEABF2 /* CellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellPresenter.swift; sourceTree = "<group>"; };
 		7F8E1E272AE0E79B00DEABF2 /* ContactCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCellPresenter.swift; sourceTree = "<group>"; };
+		7F8E1E292AE20B3E00DEABF2 /* ReuseIdentyFiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentyFiable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,7 +210,6 @@
 			isa = PBXGroup;
 			children = (
 				7F1336182AD92044004D0DFD /* Notification+Extension.swift */,
-				7F8E1E1F2ADFE51700DEABF2 /* UITableViewCell+Extension.swift */,
 				7F8E1E212AE0BDD000DEABF2 /* String+Extension.swift */,
 			);
 			path = Extensions;
@@ -220,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				7F8E1E242AE0E75300DEABF2 /* CellPresenter.swift */,
+				7F8E1E292AE20B3E00DEABF2 /* ReuseIdentyFiable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -371,10 +371,10 @@
 				0DE003E92ADF7875000D2BDD /* FilteredContactListViewController.swift in Sources */,
 				0DA361A42AD62AE600A2AA25 /* EditContactViewController.swift in Sources */,
 				7F8E1E222AE0BDD000DEABF2 /* String+Extension.swift in Sources */,
+				7F8E1E2A2AE20B3E00DEABF2 /* ReuseIdentyFiable.swift in Sources */,
 				0D6F96F22ACCF0B5006EF067 /* SceneDelegate.swift in Sources */,
 				7F8E1E282AE0E79B00DEABF2 /* ContactCellPresenter.swift in Sources */,
 				7F8E1E252AE0E75300DEABF2 /* CellPresenter.swift in Sources */,
-				7F8E1E202ADFE51700DEABF2 /* UITableViewCell+Extension.swift in Sources */,
 				0DA361A02AD4DFF500A2AA25 /* ContactManager.swift in Sources */,
 				0DA361A72AD63D3B00A2AA25 /* ContactValidityChecker.swift in Sources */,
 				7F1336192AD92044004D0DFD /* Notification+Extension.swift in Sources */,

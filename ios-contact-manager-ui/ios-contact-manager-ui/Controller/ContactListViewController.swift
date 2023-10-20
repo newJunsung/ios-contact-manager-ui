@@ -30,7 +30,7 @@ final class ContactListViewController: UIViewController {
     }
     
     private func configureTableView() {
-        tableView.register(UINib(nibName: UITableViewCell.contactCell, bundle: nil), forCellReuseIdentifier: UITableViewCell.contactCell)
+        tableView.register(UINib(nibName: ContactCell.reuseID, bundle: nil), forCellReuseIdentifier: ContactCell.reuseID)
         tableView.dataSource = self
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableView.automaticDimension
@@ -82,7 +82,7 @@ extension ContactListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let contact = contactManager.contacts[indexPath.row]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.contactCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: ContactCell.reuseID, for: indexPath)
         
         presenter.setCell(cell)
         presenter.formatContent(contact)

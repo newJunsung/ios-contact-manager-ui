@@ -25,7 +25,7 @@ class FilteredContactListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(UINib(nibName: UITableViewCell.contactCell, bundle: nil), forCellReuseIdentifier: UITableViewCell.contactCell)
+        tableView.register(UINib(nibName: ContactCell.reuseID, bundle: nil), forCellReuseIdentifier: ContactCell.reuseID)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,7 +33,7 @@ class FilteredContactListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.contactCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: ContactCell.reuseID, for: indexPath)
         presenter?.setCell(cell)
         presenter?.formatContent(filteredContacts[indexPath.row])
         return cell
